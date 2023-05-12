@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "author": "egoryhka <egor.demyanenko2000@mail.ru>",
+  "scripts": {
+    "dev": "max dev",
+    "build": "max build",
+    "postinstall": "max setup",
+    "setup": "max setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@umijs/max": "^4.0.67",
+    "antd": "^5.4.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}
