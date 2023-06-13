@@ -1,7 +1,7 @@
 import CustomSelect from "@/components/select/CustomSelect";
 import myRequest from "@/utils/request";
 import { history, useParams } from "@umijs/max";
-import { Button, Form, Input, Spin } from "antd";
+import { Button, Form, Input, Space, Spin } from "antd";
 import React from "react";
 
 export default () => {
@@ -24,7 +24,7 @@ export default () => {
     return (
         <>
             {data ?
-                <Form onFinish={editHandler} initialValues={data}>
+                <Form onFinish={editHandler} initialValues={data} autoComplete="off">
                     <Form.Item name="secondName" label="Фамилия" rules={[{ required: true }]}>
                         <Input />
                     </Form.Item>
@@ -40,7 +40,10 @@ export default () => {
                     <Form.Item name="academicDegree" label="Звание" rules={[{ required: true }]}>
                         <CustomSelect url="/Service/AcademicDegreeSelect" placeholder="Выберите звание" />
                     </Form.Item>
-                    <Button htmlType="submit">Сохранить</Button>
+                    <Space>
+                        <Button type="primary" htmlType="submit">Сохранить</Button>
+                        <Button type="primary" danger={true} onClick={() => history.back()}>Отмена</Button>
+                    </Space>
                 </Form> : <Spin></Spin>}
         </>
     );

@@ -9,8 +9,10 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@ant-design/charts": "^1.4.2",
+    "@ant-design/icons": "^4.8.0",
     "@umijs/max": "^4.0.67",
-    "antd": "^5.4.7"
+    "antd": "^4.24.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",

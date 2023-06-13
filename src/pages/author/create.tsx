@@ -1,7 +1,7 @@
 import CustomSelect from "@/components/select/CustomSelect";
 import myRequest from "@/utils/request";
 import { history } from "@umijs/max";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Space } from "antd";
 
 export default () => {
     const createHandler = (data: any) => {
@@ -12,7 +12,7 @@ export default () => {
 
     return (
         <>
-            <Form onFinish={createHandler} style={{ maxWidth: 600 }}>
+            <Form onFinish={createHandler} autoComplete="off">
                 <Form.Item name="secondName" label="Фамилия" rules={[{ required: true }]}>
                     <Input />
                 </Form.Item>
@@ -28,7 +28,12 @@ export default () => {
                 <Form.Item name="academicDegree" label="Звание" rules={[{ required: true }]}>
                     <CustomSelect url="/Service/AcademicDegreeSelect" placeholder="Выберите звание" />
                 </Form.Item>
-                <Button htmlType="submit">Создать</Button>
+
+                <Space>
+                    <Button type="primary" htmlType="submit">Создать</Button>
+                    <Button type="primary" danger={true} onClick={() => history.back()}>Отмена</Button>
+                </Space>
+
             </Form>
         </>
     );
